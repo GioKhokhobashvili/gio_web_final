@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Movie Explorer</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="search">Search</label>
+                <input type="text" id="search" placeholder="Search movies..." value="star">
+            </div>
+            
+            <div class="filter-group">
+                <label for="type-filter">Type</label>
+                <select id="type-filter">
+                    <option value="movie">Movies</option>
+                    <option value="series">TV Series</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="year-filter">Year</label>
+                <select id="year-filter">
+                    <option value="">All Years</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>IMDb Rating</label>
+                <div class="rating-range">
+                    <input type="number" id="rating-min" min="0" max="10" step="0.1" placeholder="Min">
+                    <span>to</span>
+                    <input type="number" id="rating-max" min="0" max="10" step="0.1" placeholder="Max">
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-grid" id="movie-grid">
+            <div class="loading">Loading movies...</div>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <button id="prev-page" disabled>Previous</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-page">Next</button>
+        </div>
+    </main>
+
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="movie-details" id="movie-details"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
